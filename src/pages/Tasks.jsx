@@ -19,7 +19,7 @@ function Tasks() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/tasks",
+        `${import.meta.env.VITE_API_URL}/api/tasks`,
         {
           headers: {
             Authorization: token
@@ -44,7 +44,7 @@ function Tasks() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/tasks",
+        `${import.meta.env.VITE_API_URL}/api/tasks`,
         {
           title,
           description
